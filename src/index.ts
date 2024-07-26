@@ -1,14 +1,17 @@
 import dotenv from "dotenv";
 import { ActivityType, Client, GatewayIntentBits } from "discord.js";
 import { MinecraftServerListPing } from "minecraft-status";
-import config from "./config.json";
 
 dotenv.config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const getStatus = async () => {
-  return await MinecraftServerListPing.ping(undefined, config.serverIP);
+  return await MinecraftServerListPing.ping(
+    undefined,
+    process.env.SERVER_IP!,
+    process.env.SERVER_PORT ? parseInt(process.env.SERVER_PORT) : undefined
+  );
 };
 
 const setPresence = async () => {
@@ -39,7 +42,7 @@ const setPresence = async () => {
   client.user.setActivity({
     name: "CombinationSMP",
     state,
-    url: config.website,
+    url: process.env.WEBSITE,
     type: ActivityType.Custom,
   });
 };
