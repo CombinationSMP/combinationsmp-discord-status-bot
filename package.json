@@ -2,9 +2,11 @@
   "name": "smp-discord-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "start": "node .",
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

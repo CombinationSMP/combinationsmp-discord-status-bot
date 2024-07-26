@@ -130,3 +130,4 @@ dist
 .pnp.*
 .DS_STORE
 src/config.json
+build/
