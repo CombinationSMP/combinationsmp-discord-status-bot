@@ -84,7 +84,7 @@ client.on("ready", () => {
   setChannel();
 
   setInterval(setPresence, 1000 * 60 * 5);
-  setInterval(setPresence, 1000 * 60 * 5);
+  setInterval(setChannel, 1000 * 60 * 5);
 
   console.log("Ready");
 });
